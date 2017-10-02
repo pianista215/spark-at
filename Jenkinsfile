@@ -25,7 +25,6 @@ hose {
                     | -DDCOS_IP=10.200.0.156
                     | -DDCOS_USER=admin
                     | -DBOOTSTRAP_IP=10.200.0.155
-                    | -DVERSION=2.1.0.4
                     | """.stripMargin().stripIndent()
 
     INSTALL = { config, params ->
