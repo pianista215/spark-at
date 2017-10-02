@@ -11,4 +11,4 @@ Feature: Installing Spark Dispatcher
         When I send a 'POST' request to '/marathon/v2/apps' based on 'schemas/spark-dispatcher.json' as 'json' with:
             | $.container.docker.image    | UPDATE   | qa.stratio.com/stratio/stratio-spark:${STRATIO_SPARK_VERSION} | n/a    |
         Then the service response status must be '201'
-        And in less than '300' seconds, checking each '20' seconds, the command output 'dcos task | grep -w spark-history | wc -l' contains '1'
+        And in less than '300' seconds, checking each '20' seconds, the command output 'dcos task | grep -w spark-fw | wc -l' contains '1'
