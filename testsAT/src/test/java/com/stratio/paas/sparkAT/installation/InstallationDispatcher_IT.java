@@ -1,5 +1,5 @@
 
-package com.stratio.paas.sparkAT;
+package com.stratio.paas.sparkAT.installation;
 
 import com.stratio.qa.cucumber.testng.CucumberRunner;
 import com.stratio.tests.utils.BaseTest;
