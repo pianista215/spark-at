@@ -1,7 +1,7 @@
 @rest
-Feature: Installing Spark Dispatcher
+Feature: [Install Spark History Server] Installing Spark Dispatcher
 
-    Scenario: Install Spark Dispatcher with Calico and Mesos security
+    Scenario: [Install Spark History Server][01] Install Spark Dispatcher with Calico and Mesos security
 
         Given I open a ssh connection to '${BOOTSTRAP_IP}' with user '${REMOTE_USER:-operador}' using pem file 'src/test/resources/credentials/key.pem'
         And I run 'grep -Po '"root_token":"(\d*?,|.*?[^\\]")' /stratio_volume/vault_response | awk -F":" '{print $2}' | sed -e 's/^"//' -e 's/"$//'' in the ssh connection and save the value in environment variable 'vaultToken'
