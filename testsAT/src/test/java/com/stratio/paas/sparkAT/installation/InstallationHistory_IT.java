@@ -12,8 +12,8 @@ public class InstallationHistory_IT extends BaseTest {
     public InstallationHistory_IT() {
     }
 
-    @Test(enabled = true, groups = {"installation"})
-    public void installation() throws Exception {
+    @Test(enabled = true, groups = {"BasicHistoryServerInstallation"})
+    public void installationHistoryServer() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }
 }
