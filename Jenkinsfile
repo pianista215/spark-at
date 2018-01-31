@@ -25,11 +25,19 @@ hose {
                     | -DDCOS_IP=10.200.0.156
                     | -DDCOS_USER=admin
                     | -DBOOTSTRAP_IP=10.200.0.155
+                    | -DSPARK_DOCKER_IMAGE=qa.stratio.com/stratio/stratio-spark
+		    | -DSTRATIO_SPARK_VERSION=2.3.0.0-SNAPSHOT
                     | """.stripMargin().stripIndent()
 
-    INSTALL = { config, params ->
-      def ENVIRONMENTMAP = stringToMap(params.ENVIRONMENT)
-      
-      doAT(conf: config, groups: ['installation'])
-    }
+
+
+    INSTALL = { config ->
+       if (config.INSTALLPARAMETERS.contains('GROUPS_SPARK')) {
+            config.INSTALLPARAMETERS = "${config.INSTALLPARAMETERS}".replaceAll('-DGROUPS_SPARK', '-Dgroups')
+	        doAT(conf: config)
+        } else {
+            doAT(conf: config, groups: ['BasicInstallation'])
+        }
+
+     }
 }

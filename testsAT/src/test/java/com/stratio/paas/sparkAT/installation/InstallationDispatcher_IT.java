@@ -12,8 +12,8 @@ public class InstallationDispatcher_IT extends BaseTest {
     public InstallationDispatcher_IT() {
     }
 
-    @Test(enabled = true, groups = {"installation"})
-    public void installation() throws Exception {
+    @Test(enabled = true, groups = {"BasicInstallation"})
+    public void installationSparkDispacher() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }
 }
